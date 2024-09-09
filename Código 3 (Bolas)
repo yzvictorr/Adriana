@@ -1,0 +1,41 @@
+public class Bola {
+    private String cor;
+    private int tamanho;
+    private String material;
+
+    public Bola(String cor, int tamanho, String material) {
+        this.cor = cor;
+        this.tamanho = tamanho;
+        this.material = material;
+    }
+
+    public void inflar() {
+        tamanho += 2; 
+        System.out.println("A bola foi inflada. Seu novo tamanho e: " + tamanho);
+    }
+
+    public void trocarCor(String novaCor) {
+        this.cor = novaCor;
+        System.out.println("A cor da bola foi trocada para: " + cor);
+    }
+
+    public void descreverBola() {
+        System.out.println("Cor: " + cor);
+        System.out.println("Tamanho: " + tamanho);
+        System.out.println("Material: " + material);
+    }
+
+    public static void main(String[] args) {
+        Bola minhaBola = new Bola("Azul", 8, "Borracha");
+
+        System.out.println("Descricao inicial:");
+        minhaBola.descreverBola();
+
+        minhaBola.inflar();
+
+        minhaBola.trocarCor("Amarelo");
+
+        System.out.println("Descricao apos modificacoes:");
+        minhaBola.descreverBola();
+    }
+}
