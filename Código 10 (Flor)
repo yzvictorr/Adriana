@@ -1,0 +1,56 @@
+public class Flor {
+    
+    private String nome;
+    private String cor;
+    private int quantidade;
+
+    public Flor(String nome, String cor, int quantidade) {
+        this.nome = nome;
+        this.cor = cor;
+        this.quantidade = quantidade;
+    }
+
+    public void adicionarQuantidade(int quantidadeAdicional) {
+        if (quantidadeAdicional > 0) {
+            this.quantidade += quantidadeAdicional;
+            System.out.println("Adicionadas " + quantidadeAdicional + " flores. Quantidade atual: " + this.quantidade);
+        } else {
+            System.out.println("Quantidade invalida. Deve ser um valor positivo.");
+        }
+    }
+
+    public void removerQuantidade(int quantidadeRemover) {
+        if (quantidadeRemover > 0) {
+            if (this.quantidade >= quantidadeRemover) {
+                this.quantidade -= quantidadeRemover;
+                System.out.println("Removidas " + quantidadeRemover + " flores. Quantidade restante: " + this.quantidade);
+            } else {
+                System.out.println("Quantidade insuficiente para remover.");
+            }
+        } else {
+            System.out.println("Quantidade invalida. Deve ser um valor positivo.");
+        }
+    }
+
+    public void mostrarInformacoes() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Cor: " + cor);
+        System.out.println("Quantidade: " + quantidade);
+    }
+
+    public static void main(String[] args) {
+        Flor minhaFlor = new Flor("Orquidea", "Azul", 3);
+
+        System.out.println("Informacoes iniciais:");
+        minhaFlor.mostrarInformacoes();
+
+        minhaFlor.adicionarQuantidade(7);
+
+        minhaFlor.removerQuantidade(5);
+
+        minhaFlor.removerQuantidade(15);
+
+        System.out.println("Informacoes atualizadas:");
+        minhaFlor.mostrarInformacoes();
+    }
+}
