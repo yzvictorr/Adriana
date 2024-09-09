@@ -1,0 +1,56 @@
+public class Fruta {
+    
+    private String nome;
+    private String cor;
+    private int peso;
+
+    public Fruta(String nome, String cor, int peso) {
+        this.nome = nome;
+        this.cor = cor;
+        this.peso = peso;
+    }
+
+    public void adicionarPeso(int pesoAdicional) {
+        if (pesoAdicional > 0) {
+            this.peso += pesoAdicional;
+            System.out.println("Adicionando " + pesoAdicional + " gramas a fruta " + nome + ". Peso atual: " + this.peso + " gramas.");
+        } else {
+            System.out.println("Peso adicional invalido. Deve ser um valor positivo.");
+        }
+    }
+
+    public void removerPeso(int pesoRemover) {
+        if (pesoRemover > 0) {
+            if (this.peso >= pesoRemover) {
+                this.peso -= pesoRemover;
+                System.out.println("Removendo " + pesoRemover + " gramas da fruta " + nome + ". Peso restante: " + this.peso + " gramas.");
+            } else {
+                System.out.println("Peso insuficiente para remover.");
+            }
+        } else {
+            System.out.println("Peso a ser removido invalido. Deve ser um valor positivo.");
+        }
+    }
+
+    public void mostrarInformacoes() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Cor: " + cor);
+        System.out.println("Peso: " + peso + " gramas");
+    }
+
+    public static void main(String[] args) {
+        Fruta minhaFruta = new Fruta("Banana", "Amarela", 120);
+
+        System.out.println("Informacoes iniciais:");
+        minhaFruta.mostrarInformacoes();
+
+        minhaFruta.adicionarPeso(70);
+
+        minhaFruta.removerPeso(50);
+
+        minhaFruta.removerPeso(200);
+
+        System.out.println("Informacoes atualizadas:");
+        minhaFruta.mostrarInformacoes();
+    }
+}
