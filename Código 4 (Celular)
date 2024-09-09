@@ -1,0 +1,47 @@
+public class Celular {
+    
+    private String marca;
+    private String modelo;
+    private int capacidadeBateria; 
+
+    public Celular(String marca, String modelo, int capacidadeBateria) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.capacidadeBateria = capacidadeBateria;
+    }
+
+    public void carregarBateria(int carga) {
+        if (carga > 0) {
+            capacidadeBateria += carga;
+            System.out.println("Bateria carregada em " + carga + " mAh. Capacidade atual: " + capacidadeBateria + " mAh.");
+        } else {
+            System.out.println("Carga inválida. O valor deve ser positivo.");
+        }
+    }
+
+    public void trocarModelo(String novoModelo) {
+        this.modelo = novoModelo;
+        System.out.println("Modelo do celular trocado para: " + modelo);
+    }
+
+    public void exibirInformacoes() {
+        System.out.println("Marca: " + marca);
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Capacidade da Bateria: " + capacidadeBateria + " mAh");
+    }
+
+    public static void main(String[] args) {
+        Celular meuCelular = new Celular("Apple", "Iphone 11", 3110);
+
+        System.out.println("Informacoes iniciais:");
+        meuCelular.exibirInformacoes();
+
+        meuCelular.carregarBateria(117);
+
+        meuCelular.trocarModelo("Iphone 13");
+
+        System.out.println("Informacoes atualizadas:");
+        meuCelular.exibirInformacoes();
+    }
+}
+
