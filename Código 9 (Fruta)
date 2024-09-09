@@ -1,0 +1,49 @@
+public class Cor {
+
+    private String nome;
+    private String hex;
+    private String rgb;
+
+    public Cor(String nome, String hex, String rgb) {
+        this.nome = nome;
+        this.hex = hex;
+        this.rgb = rgb;
+    }
+
+    public void alterarNome(String novoNome) {
+        this.nome = novoNome;
+        System.out.println("Nome da cor alterado para: " + this.nome);
+    }
+
+    public void alterarHex(String novoHex) {
+        this.hex = novoHex;
+        System.out.println("Código hexadecimal alterado para: " + this.hex);
+    }
+    
+    public void alterarRGB(String novoRGB) {
+        this.rgb = novoRGB;
+        System.out.println("Valor RGB alterado para: " + this.rgb);
+    }
+
+    public void mostrarInformacoes() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Código Hexadecimal: " + hex);
+        System.out.println("Valor RGB: " + rgb);
+    }
+
+    public static void main(String[] args) {
+        Cor minhaCor = new Cor("Rosa", "#FFCBDB", "255,0,127");
+
+        System.out.println("Informacoes iniciais:");
+        minhaCor.mostrarInformacoes();
+
+        minhaCor.alterarNome("Laranja");
+
+        minhaCor.alterarHex("#FFA500");
+        
+        minhaCor.alterarRGB("255,165,0");
+
+        System.out.println("Informacoes atualizadas:");
+        minhaCor.mostrarInformacoes();
+    }
+}
