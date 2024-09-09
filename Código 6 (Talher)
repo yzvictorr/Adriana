@@ -1,0 +1,37 @@
+public class Talher {
+    
+    private String tipo;
+    private String material;
+    private String tamanho;
+
+    public Talher(String tipo, String material, String tamanho) {
+        this.tipo = tipo;
+        this.material = material;
+        this.tamanho = tamanho;
+    }
+
+    public void usar() {
+        System.out.println("Usando o talher: " + tipo);
+    }
+
+    public void limpar() {
+        System.out.println("Limpando o talher: " + tipo);
+    }
+
+    public void mostrarInformacoes() {
+        System.out.println("Tipo: " + tipo);
+        System.out.println("Material: " + material);
+        System.out.println("Tamanho: " + tamanho);
+    }
+
+    public static void main(String[] args) {
+        Talher meuTalher = new Talher("Garfo", "Aco inoxidavel", "Medio");
+
+        System.out.println("Informacoes sobre o Talher:");
+        meuTalher.mostrarInformacoes();
+
+        meuTalher.usar();
+
+        meuTalher.limpar();
+    }
+}
