@@ -1,0 +1,50 @@
+public class Tenis {
+    private String marca;
+    private int tamanho;
+    private String cor;
+
+    public Tenis(String marca, int tamanho, String cor) {
+        this.marca = marca;
+        this.tamanho = tamanho;
+        this.cor = cor;
+    }
+
+    public void exibirInformacoes() {
+        System.out.println("Marca: " + marca);
+        System.out.println("Tamanho: " + tamanho);
+        System.out.println("Cor: " + cor);
+    }
+
+
+    public void setMarca(String novaMarca) {
+        this.marca = novaMarca;
+    }
+
+    public void setTamanho(int novoTamanho) {
+        if (novoTamanho > 0) {
+            this.tamanho = novoTamanho;
+        } else {
+            System.out.println("Tamanho invalido. O tamanho deve ser maior que 0.");
+        }
+    }
+
+    public void setCor(String novaCor) {
+        this.cor = novaCor;
+    }
+
+    public static void main(String[] args) {
+        Tenis meuTenis = new Tenis("Nike", 41, "Preto");
+
+        System.out.println("Informacoes iniciais:");
+        meuTenis.exibirInformacoes();
+
+        meuTenis.setMarca("New balance");
+
+        meuTenis.setTamanho(39);
+
+        meuTenis.setCor("Branco");
+
+        System.out.println("Informacoes Atualizadas:");
+        meuTenis.exibirInformacoes();
+    }
+}
