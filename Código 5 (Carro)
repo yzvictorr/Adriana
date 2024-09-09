@@ -1,0 +1,77 @@
+import java.util.Scanner;
+
+public class Carro {
+    
+    private String marca;
+    private String modelo;
+    private int ano;
+    private boolean ligado;
+
+    public Carro(String marca, String modelo, int ano) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+        this.ligado = false; 
+    }
+
+    public void ligar() {
+        if (!ligado) {
+            ligado = true;
+            System.out.println("O carro " + marca + " " + modelo + " de " + ano + " esta ligado.");
+        } else {
+            System.out.println("O carro ja esta ligado.");
+        }
+    }
+
+    public void desligar() {
+        if (ligado) {
+            ligado = false;
+            System.out.println("O carro " + marca + " " + modelo + " de " + ano + " esta desligado.");
+        } else {
+            System.out.println("O carro ja esta desligado.");
+        }
+    }
+
+    public void mostrarInformacoes() {
+        System.out.println("Marca: " + marca);
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Ano: " + ano);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        Carro meuCarro = new Carro("Chevrolet", "Tracker", 2024);
+
+        System.out.println("Informacoes do carro:");
+        meuCarro.mostrarInformacoes();
+        boolean continuar = true;
+        while (continuar) {
+            System.out.println("\nEscolha uma opcao:");
+            System.out.println("1. Ligar o carro");
+            System.out.println("2. Desligar o carro");
+            System.out.println("3. Sair");
+            System.out.print("Digite o numero da opcao: ");
+            
+            int opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    meuCarro.ligar();
+                    break;
+                case 2:
+                    meuCarro.desligar();
+                    break;
+                case 3:
+                    continuar = false;
+                    System.out.println("Saindo.");
+                    break;
+                default:
+                    System.out.println("Opcao invalida. Tente novamente.");
+                    break;
+            }
+        }
+        
+        scanner.close();
+    }
+}
