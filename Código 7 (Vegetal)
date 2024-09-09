@@ -1,0 +1,57 @@
+public class Vegetal {
+
+    private String nome;
+    private String cor;
+    private int quantidade;
+
+    public Vegetal(String nome, String cor, int quantidade) {
+        this.nome = nome;
+        this.cor = cor;
+        this.quantidade = quantidade;
+    }
+
+    public void adicionarQuantidade(int quantidade) {
+        if (quantidade > 0) {
+            this.quantidade += quantidade;
+            System.out.println("Adicionado " + quantidade + " unidades de " + nome + ". Quantidade atual: " + this.quantidade);
+        } else {
+            System.out.println("Quantidade inválida. Deve ser um valor positivo.");
+        }
+    }
+
+    public void removerQuantidade(int quantidade) {
+        if (quantidade > 0) {
+            if (this.quantidade >= quantidade) {
+                this.quantidade -= quantidade;
+                System.out.println("Removido " + quantidade + " unidades de " + nome + ". Quantidade restante: " + this.quantidade);
+            } else {
+                System.out.println("Quantidade insuficiente para remover.");
+            }
+        } else {
+            System.out.println("Quantidade invalida. Deve ser um valor positivo.");
+        }
+    }
+
+    public void mostrarInformacoes() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Cor: " + cor);
+        System.out.println("Quantidade: " + quantidade);
+    }
+
+    public static void main(String[] args) {
+        Vegetal meuVegetal = new Vegetal("Beringela", "Roxo", 6);
+
+        System.out.println("Informacoes iniciais:");
+        meuVegetal.mostrarInformacoes();
+
+        meuVegetal.adicionarQuantidade(4);
+
+        meuVegetal.removerQuantidade(2);
+
+
+        meuVegetal.removerQuantidade(15);
+
+        System.out.println("Informacoes atualizadas:");
+        meuVegetal.mostrarInformacoes();
+    }
+}
